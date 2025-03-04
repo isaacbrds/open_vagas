@@ -1,0 +1,9 @@
+<div class="row py-5">
+  <%= simple_form_for @company do |f| %>
+    <%= f.input :name %>
+    <%= f.input :url %>
+    
+    <%= f.file_field :logo %>
+    <%= f.button :submit, class: 'btn btn-success' %>
+  <% end %>
+</div>

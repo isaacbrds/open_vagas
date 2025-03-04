@@ -1,4 +1,6 @@
 pt-BR:
+  sign up: Registrar-se
+  Send me reset password instructions: Me envie instruções para reiniciar a senha
   activerecord:
     attributes:
       user:
