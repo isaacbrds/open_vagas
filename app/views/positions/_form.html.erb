@@ -1,0 +1,44 @@
+<div class="row py-5">
+  <div class="card">
+      <div class="card-header">
+        <%= @position.new_record? ? "Nova vaga" : "Editar vaga #{@position.name}" %>
+      </div>
+      <div class="card-body">
+        <%= simple_form_for @position, data: { turbo: false } do |f| %>
+        <div class="form-group">
+          <%= f.input :name, label: t('activerecord.attributes.position.name') %>
+        </div>
+        <div class="form-group">
+          <%= f.input :career, label: t('activerecord.attributes.position.career'), as: :select, collection: Position.careers.keys.map { |c| [t("activerecord.enums.position.career.#{c}"), c] }, include_blank: false %>
+        </div>
+        <div class="form-group">
+          <%= f.input :contract, label: t('activerecord.attributes.position.contract'), as: :select, collection: Position.contracts.keys.map { |c| [t("activerecord.enums.position.contract.#{c}"), c] } %>
+        </div>
+        <div class="form-check">
+          <%= f.input :remote, label: t('activerecord.attributes.position.remote'), as: :boolean %>
+        </div>
+        <div class="form-group">
+          <%= f.input :city, label: t('activerecord.attributes.position.city') %>
+        </div>
+        <div class="form-group">
+          <%= f.input :state, label: t('activerecord.attributes.position.state') %>
+        </div>
+        <div class="form-group">
+          <%= f.input :summary, label: t('activerecord.attributes.position.summary') %>
+        </div>
+        <div class="form-group">
+          <%= f.input :description, label: t('activerecord.attributes.position.description') %>
+        </div>
+        <div class="form-check">
+          <%= f.input :publish, label: t('activerecord.attributes.position.publish'), as: :boolean %>
+        </div>
+        <div class="form-group">
+          <%= f.association :company, label: t('activerecord.attributes.position.company'), disabled: true %>
+        </div>
+      </div>
+        <div class="card-footer">
+          <%= f.button :submit, class: 'btn btn-success' %>
+        </div>
+      <% end %>
+  </div>
+</div>

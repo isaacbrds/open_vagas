@@ -1,0 +1,84 @@
+pt-BR:
+  activerecord:
+    models:
+      position: "Vaga"
+      company: "Empresa"
+    attributes:
+      company:
+        name: "Nome da empresa"
+        url: "Site da empresa"
+        logo: "Logo da empresa"
+      position:
+        name: "Nome"
+        career: "Carreira"
+        contract: "Contrato"
+        remote: "Remoto"
+        city: "Cidade"
+        state: "Estado"
+        summary: "Resumo"
+        description: "Descrição"
+        publish: "Publicado"
+        company: "Empresa"
+      remote:
+        yes: "Sim"
+        no: "Não"
+    errors:
+      models:
+        position:
+          attributes:
+            name:
+              blank: "não pode ser vazio"
+            career:
+              blank: "não pode ser vazio"
+            contract:
+              blank: "não pode ser vazio"
+            remote:
+              blank: "não pode ser vazio"
+            city:
+              blank: "não pode ser vazio"
+            state:
+              blank: "não pode ser vazio"
+            summary:
+              blank: "não pode ser vazio"
+            description:
+              blank: "não pode ser vazio"
+            publish:
+              blank: "não pode ser vazio"
+            company:
+              blank: "não pode ser vazio"
+        company:
+          attributes:
+            name:
+              blank: "não pode ser vazio"
+            url:
+              blank: "não pode ser vazio"
+    enums:
+      position:
+        career:
+          developer: Desenvolvedor
+          information_technology: Tecnologia da Informação
+          business_inteligence: BI
+          designer: Designer
+        contract:
+          clt: CLT
+          pj: PJ
+          both: A combinar
+  helpers:
+    submit:
+      create: "Criar %{model}"
+      update: "Atualizar %{model}"
+      submit: "Salvar %{model}"
+  positions:
+    index:
+      title: "Lista de Vaga"
+      new: "Nova Vaga"
+      view: "Visualizar"
+      edit: "Editar"
+      delete: "Excluir"
+      confirm_delete: "Tem certeza que deseja excluir esta posição?"
+  buttons:
+    edit: Editar
+    back: Voltar
+    delete: Excluir
+  messages:
+    confirm_delete: Deseja realmente excluir?

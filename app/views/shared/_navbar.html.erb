@@ -9,27 +9,27 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "Minha Empresa",dinamic_url, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Vagas",positions_path, class: "nav-link" %>
+            </li>
 
-            <%= link_to "Minha Empresa",dinamic_url, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Courses</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Blog</a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Blog</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Event</a>
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Event</a>
-          </li>
-
-        </ul>
-        <% if current_user %>
-          <%= link_to current_user.email,edit_user_registration_path(current_user), class: "btn btn-outline-primary mr-2" %>
-        <% else %>
-          <%= link_to "Login",new_user_session_path, class: "btn btn-outline-primary mr-2" %>
+          </ul>
+            <%= link_to current_user.email, edit_user_registration_path(current_user), class: "btn btn-outline-primary mr-2" %>
+            <%= link_to "Logout", destroy_user_session_path(current_user), data: { turbo_method: 'delete', turbo_confirm: 'Tem certeza?' }, class: "btn btn-outline-primary m-2" %>
+          <% else %>
+            <%= link_to "Login",new_user_session_path, class: "btn btn-outline-primary mr-2" %>
         <% end %>
 
       </div>

@@ -1,2 +1,18 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row py-5">
+  <% @positions.each do |position| %>
+  <div class="card">
+    <card class="card-header d-flex justify-content-between">
+      <%= position.name %>
+      <strong> Empresa: </strong>
+      <%= position.company.name %>
+    </card>
+    <div class="card-body">
+      <%= position.summary %>
+    </div>
+    <div class="card-footer">
+      <%= link_to "detalhes da vaga" , position_path(position) %>
+    </div>
+  </div>
+<% end %>
+
+</div>

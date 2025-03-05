@@ -1,0 +1,36 @@
+<!-- app/views/positions/index.html.erb -->
+<h2 class=" d-flex py-5 justify-content-center">Lista de Vagas</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Carreira</th>
+      <th>Contrato</th>
+      <th>Remoto</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th>Publicado</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @positions.each do |position| %>
+      <tr>
+        <td><%= position.name %></td>
+        <td><%= position.career %></td>
+        <td><%= position.contract %></td>
+        <td><%= position.remote ? 'Sim' : 'Não' %></td>
+        <td><%= position.city %></td>
+        <td><%= position.state %></td>
+        <td><%= position.publish ? 'Sim' : 'Não' %></td>
+        <td>
+          <%= link_to 'Visualizar', position_path(position), class: 'btn btn-info' %>
+          <%= link_to 'Editar', edit_position_path(position), class: 'btn btn-warning' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('positions.index.new'), new_position_path, class: 'btn btn-primary' %>
